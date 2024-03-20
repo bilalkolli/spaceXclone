@@ -1,5 +1,5 @@
 <script setup async lang="ts" >
-import MainLayout from "~/layouts/MainLayout.vue";
+import MainLayout from "~/layouts/MainLayout.vue"
 
 const products = [
     {id:1,title:"UNISEX X COLLECTION SWEATSHIRT",price:6000,url:"https://shop.spacex.com/cdn/shop/files/SpaceXCrewRustFront_900x.png?v=1699915190",url2:"https://shop.spacex.com/cdn/shop/files/SpaceXCrewRustDetail_600x.png?v=1699915190",collection:"x-collection"},
@@ -17,7 +17,6 @@ const products = [
     {id:13,title:"SUPER HEAVY CHROME MODEL",price:49900,url:"https://shop.spacex.com/cdn/shop/files/SpaceXBoosterFullyStacked_600x.png?v=1699917818",url2:"https://shop.spacex.com/cdn/shop/files/StarshipBoosterOpenedPackaging_600x.png?v=1699917817",collection:"accessories"},
     {id:14,title:"STARSHIP CHROME MODEL",price:30000,url:"https://shop.spacex.com/cdn/shop/products/Unknown-1_600x.png?v=1681580111",url2:"https://shop.spacex.com/cdn/shop/products/Unknown-2_600x.png?v=1681580111",collection:"accessories"},
     {id:15,title:"HOTSTAGE | BOOSTER UPGRADE KIT PRE-SALE",price:12500,url:"https://shop.spacex.com/cdn/shop/files/hotstage_booster_1_300x.png?v=1710198422",url2:"https://shop.spacex.com/cdn/shop/files/hotstage_400x.png?v=1710198422",collection:"accessories"},
-
 ]
 </script>
 
@@ -48,7 +47,6 @@ const products = [
     margin: 0;
     padding: 0;
 }
-
 #menu{
     display: grid;
     margin-top: 50px;

@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import MainLayout from "~/layouts/MainLayout.vue";
+import MainLayout from "~/layouts/MainLayout.vue"
 
 const products = [ 
     {id:1,title:"UNISEX X COLLECTION SWEATSHIRT",price:6000,url:"https://shop.spacex.com/cdn/shop/files/SpaceXCrewRustFront_900x.png?v=1699915190",url2:"https://shop.spacex.com/cdn/shop/files/SpaceXCrewRustDetail_600x.png?v=1699915190",collection:"x-collection"},
@@ -22,7 +22,6 @@ const products = [
 </script>
 
 <style>
-
 #menu {
     margin-bottom: 50px;
 }

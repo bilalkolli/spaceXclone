@@ -13,8 +13,8 @@
 </template>
 
 <script setup>
-const props = defineProps(['product']);
-const { product } = toRefs(props);
+const props = defineProps(['product'])
+const { product } = toRefs(props)
 const priceComputed = computed(() => {
         return product.value.price / 100
     });
@@ -55,7 +55,6 @@ aside {
     width: 550px;
     animation: myAnim 1.5s ease 0s 1 normal forwards;
 }
-
 @keyframes myAnim {
 	0% {
 		opacity: 0;
@@ -72,10 +71,7 @@ aside {
     justify-content: center;
     flex-direction: column;
 }
-
 .lol{
-    display: flex;
-    justify-content: center;
     margin-right: 50px;
 }
 </style>

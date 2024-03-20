@@ -12,11 +12,10 @@
 </template>
 
 <script setup>
-import { useUserStore } from '~/store/user';
-const userStore = useUserStore();
-const props = defineProps(['product']);
-const emit = defineEmits(['selectedRadio']);
-
+import { useUserStore } from '~/store/user'
+const userStore = useUserStore()
+const props = defineProps(['product'])
+const emit = defineEmits(['selectedRadio'])
 const removeFromCart = (productToRemove) => {
     const index = userStore.cart.findIndex(prod => prod.id === productToRemove.id);
     if (index !== -1) {
@@ -52,7 +51,6 @@ const removeFromCart = (productToRemove) => {
 #imagedeproduit {
     width: 120px;
 }
-
 #detailsdupanier {
     width: 400px;
 }

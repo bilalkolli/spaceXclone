@@ -2,33 +2,25 @@
 import { ref, computed } from 'vue';
 import MainLayout from '~/layouts/MainLayout.vue';
 import { useUserStore } from '~/store/user';
-
 import { useRoute } from 'vue-router';
-
 const userStore = useUserStore();
 const route = useRoute()
 const product = ref(null)
-
 onBeforeMount(async () => {
     product.value = await useFetch(`/api/prisma/get-product-by-id/${route.params.id}`);
-});
-
+})
 const priceComputed = computed(() => {
     return product.value?.data?.price / 100; 
-});
-
+})
 const titres = computed(() => {
     return product?.value?.data?.title
 })
-
 const addToCart = () => {
     userStore.cart.push(product.value.data)
 }
-
 const lien1 = computed(() => {
     return product?.value?.data?.url
 })
-
 const lien2 = computed(() => {
     return product?.value?.data?.url2
 })
@@ -65,11 +57,9 @@ const lien2 = computed(() => {
     flex-direction: column; 
 }
 #objet{
-    margin-top: 5px;
-    margin-left: 50px;
     display: flex;
     justify-content: center; 
-    
+    background-color: #EAEDED
 }
 #panier:hover {
   color: #fff;
@@ -77,7 +67,6 @@ const lien2 = computed(() => {
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
-
 #panier{
     background-color: white;
     color: black;
@@ -88,7 +77,6 @@ const lien2 = computed(() => {
     text-decoration: none;
     border-radius: 0;
 }
-
 #prix {
     margin-top: 10px;
     padding-bottom: 50px;
@@ -102,15 +90,14 @@ const lien2 = computed(() => {
     height: 200px;
     position: sticky;
     top: 100px;
+    background-color: white;
 }
-
 #afficheproduit1,#afficheproduit2{
     margin-top: 50px;
     width: 795px;
     height: 850px;
     animation: myAnim 1.5s ease 0s 1 normal forwards;
 }
-
 @keyframes myAnim {
 	0% {
 		opacity: 0;
@@ -122,7 +109,6 @@ const lien2 = computed(() => {
 		transform: translateY(0);
 	}
 }
-
 @media screen and (max-width: 1456px){
     #objet{
     display: flex;

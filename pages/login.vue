@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import MainLayout from '~/layouts/MainLayout.vue';
+import MainLayout from '~/layouts/MainLayout.vue'
 const client = useSupabaseClient()
 const user = useSupabaseUser()
 watchEffect(() => {
@@ -22,7 +22,7 @@ const login = async (prov) => {
   const { data, error } = await client.auth.signInWithOAuth({
     provider: prov,
     redirectTo: window.location.origin
-  });
+  })
 }
 </script>
 
@@ -30,7 +30,7 @@ const login = async (prov) => {
 h1 {
     padding-bottom: 40px;
 }
-#GitHub,#google{
+#google{
     margin-top: 20px;
     transition: background-color .3s, box-shadow .3s;
     
@@ -49,24 +49,15 @@ h1 {
   background-repeat: no-repeat;
   background-position: 12px 11px;
 }
-
-#GitHub {
-   background-image: url(https://desktop.github.com/images/desktop-icon.svg);
-   background-size: 10%; 
-   background-position: 8px 5px;
-}
-
 #authpage {
     display: flex;
     justify-content: center;
 }
-
 #google:hover,#GitHub:hover {
     cursor: pointer;
     box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 2px 4px rgba(0, 0, 0, .25);
     background-color: rgb(218, 217, 217);
   }
-
 article {
     display:flex;
     text-align: center;
@@ -77,6 +68,5 @@ article {
     border-color: #818181;
     padding: 50px;
     padding-bottom: 100px;
-
 }
 </style>

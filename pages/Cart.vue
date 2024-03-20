@@ -16,10 +16,10 @@
 </template>
 
 <script setup>
-import MainLayout from '~/layouts/MainLayout.vue';
-import { useUserStore } from '~/store/user';
-const props = defineProps(['product']);
-const { product } = toRefs(props);
+import MainLayout from '~/layouts/MainLayout.vue'
+import { useUserStore } from '~/store/user'
+const props = defineProps(['product'])
+const { product } = toRefs(props)
 const userStore = useUserStore()
 const user = useSupabaseUser()
 </script>
@@ -27,7 +27,7 @@ const user = useSupabaseUser()
 <style>
 aside {
     border: #818181;
-    border-radius: 1px ;
+    border-radius: 1px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -39,8 +39,6 @@ aside {
     text-align: center;
     margin-left: 0px;
 }
-
-
 #rempli {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -69,9 +67,7 @@ aside {
     height: 80vh;
     border: 1px solid;
 }
-
 #main2 {
-    
     display: flex;
     text-align: center;
     flex-direction: column;
