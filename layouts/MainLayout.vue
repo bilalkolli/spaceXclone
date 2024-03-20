@@ -33,6 +33,11 @@
     <slot></slot>
 </template>
 
+<script setup>
+import { useUserStore } from '~/store/user';
+const userStore = useUserStore();
+</script>
+
 <style>
 .barre {
     background-color: black;
@@ -157,12 +162,4 @@ nav{
     }
 }
 </style>
-
-
-
-
-<script setup>
-import { useUserStore } from '~/store/user';
-const userStore = useUserStore();
-</script>
 

@@ -1,22 +1,4 @@
-<template>
-    <MainLayout>
-        <div id="objet">
-            <div id="gauche">
-                <img :srcset="lien1" id="afficheproduit1">
-                <img :srcset="lien2" id="afficheproduit2">
-            </div>
-            <div id="droite">
-                <h1 id="titre" style="text-align: left;">{{ titres }}</h1>
-                <p id="prix">${{ priceComputed }}</p>
-                <nuxt-link to="/Cart" v-on:click="addToCart" id="panier">
-                    ADD TO CART
-                </nuxt-link>
-            </div>
-        </div>
-    </MainLayout>
-</template>
-
-<script setup>
+<script setup async>
 import { ref, computed } from 'vue';
 import MainLayout from '~/layouts/MainLayout.vue';
 import { useUserStore } from '~/store/user';
@@ -26,6 +8,10 @@ import { useRoute } from 'vue-router';
 const userStore = useUserStore();
 const route = useRoute()
 const product = ref(null)
+
+onBeforeMount(async () => {
+    product.value = await useFetch(`/api/prisma/get-product-by-id/${route.params.id}`);
+});
 
 const priceComputed = computed(() => {
     return product.value?.data?.price / 100; 
@@ -46,14 +32,27 @@ const lien1 = computed(() => {
 const lien2 = computed(() => {
     return product?.value?.data?.url2
 })
-onBeforeMount(async () => {
-    product.value = await useFetch(`/api/prisma/get-product-by-id/${route.params.id}`);
-});
 </script>
 
+<template>
+    <MainLayout>
+        <div id="objet">
+            <div id="gauche">
+                <img :srcset="lien1" id="afficheproduit1">
+                <img :srcset="lien2" id="afficheproduit2">
+            </div>
+            <div id="droite">
+                <h1 id="titre" style="text-align: left;">{{ titres }}</h1>
+                <p id="prix">${{ priceComputed }}</p>
+                <nuxt-link to="/Cart" v-on:click="addToCart" id="panier">
+                    ADD TO CART
+                </nuxt-link>
+            </div>
+        </div>
+    </MainLayout>
+</template>
+
 <style>
-
-
 #titre {
     letter-spacing: 0px;
     font-size: 20px;
@@ -152,5 +151,4 @@ onBeforeMount(async () => {
     top: 100px;
 }
 }
-
 </style>

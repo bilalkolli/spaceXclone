@@ -15,11 +15,7 @@
 import { useUserStore } from '~/store/user';
 const userStore = useUserStore();
 const props = defineProps(['product']);
-const { product} = toRefs(props);
 const emit = defineEmits(['selectedRadio']);
-
-let isSelected = ref(false)
-
 
 const removeFromCart = (productToRemove) => {
     const index = userStore.cart.findIndex(prod => prod.id === productToRemove.id);
@@ -27,8 +23,6 @@ const removeFromCart = (productToRemove) => {
         userStore.cart.splice(index, 1);
     }
 };
-
-
 </script>
 
 <style>
@@ -37,11 +31,10 @@ const removeFromCart = (productToRemove) => {
     cursor: pointer;
     height: 25px;
     background: 
-      linear-gradient(currentColor 0 0) 
-      bottom /var(--d, 0) 3px no-repeat;
+    linear-gradient(currentColor 0 0) 
+    bottom /var(--d, 0) 3px no-repeat;
      transition:0.5s;
 }
-
 .retirer:hover {
     color: black;
     --d: 100%;
@@ -67,6 +60,4 @@ const removeFromCart = (productToRemove) => {
     display: flex;
     flex-direction: row;
 }
-
-
 </style>

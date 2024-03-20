@@ -1,20 +1,4 @@
-<template>
-    <MainLayout>
-    <div id="index">
-        <img id="imagedefond" src="https://shop.spacex.com/cdn/shop/files/X_collection_olive_hoodie_photo_main_page_2200x.png?v=1695400972">
-    <div id="menu">
-        <h1 id="tren">TRENDING</h1>
-     <div class="grid-container">
-        <div v-if="products" v-for="product in products" :key="product.id">
-        <productComponent :product="product"></productComponent>
-        </div>
-     </div>
-    </div>
-    </div>
-    </MainLayout>
-</template>
-
-<script setup lang="ts">
+<script setup async lang="ts" >
 import MainLayout from "~/layouts/MainLayout.vue";
 
 const products = [
@@ -35,8 +19,23 @@ const products = [
     {id:15,title:"HOTSTAGE | BOOSTER UPGRADE KIT PRE-SALE",price:12500,url:"https://shop.spacex.com/cdn/shop/files/hotstage_booster_1_300x.png?v=1710198422",url2:"https://shop.spacex.com/cdn/shop/files/hotstage_400x.png?v=1710198422",collection:"accessories"},
 
 ]
-
 </script>
+
+<template>
+    <MainLayout>
+    <div id="index">
+        <img id="imagedefond" src="https://shop.spacex.com/cdn/shop/files/X_collection_olive_hoodie_photo_main_page_2200x.png?v=1695400972">
+    <div id="menu">
+        <h1 id="tren">TRENDING</h1>
+     <div class="grid-container">
+        <div v-if="products" v-for="product in products" :key="product.id">
+        <productComponent :product="product"></productComponent>
+        </div>
+     </div>
+    </div>
+    </div>
+    </MainLayout>
+</template>
 
 <style>
 .grid-container {
