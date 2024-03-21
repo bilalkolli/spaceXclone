@@ -34,14 +34,6 @@ To get started with the project, follow these steps:
 3. Run the development server using `npm run server`.
 4. Access the application in your browser at `http://localhost:8080`.
 
-## Contributing
-
-Contributions are welcome! If you'd like to contribute to this project, please fork the repository and create a pull request with your proposed changes.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
 ---
 
 Feel free to explore the codebase and contribute to make this project even better! If you have any questions or suggestions, please feel free to open an issue.
