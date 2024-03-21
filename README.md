@@ -31,7 +31,7 @@ To get started with the project, follow these steps:
 
 1. Clone this repository.
 2. Install dependencies using `npm install`.
-3. Run the development server using `npm run serve`.
+3. Run the development server using `npm run server`.
 4. Access the application in your browser at `http://localhost:8080`.
 
 ## Contributing
